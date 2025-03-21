@@ -1,5 +1,7 @@
+
 <?php
 echo "<a href='index2.php'>link naar formulier</a>";
+
 //maak de PDO-connectie beschikbaar in dit bestand
 require "db/dbconnection.class.php";
 //maak een nieuwe connectie aan in de variabele $dbconnect
