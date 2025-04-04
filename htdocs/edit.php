@@ -7,7 +7,7 @@ $id = $_GET['id'];
 $sql = "SELECT * FROM recipes WHERE id = $id";
 $query = $dbconnect -> prepare($sql);
 $query -> execute();
-$result = $query -> fetchAll(PDO::FETCH_ASSOC);
+$recset = $query -> fetchAll(PDO::FETCH_ASSOC);
 echo "<pre>";
 print_r(value: $recset);
 echo "</pre>";
@@ -25,11 +25,11 @@ echo "</pre>";
     <form>
 <div class="mb-3">
     <label for="name" class="form-label">Receptnaam</label>
-    <input type="email" class="form-control" id="name" value="<?php echo $recset[0]['recipe_name'] ?>">
+    <input type="recipename" class="form-control" id="name" value="<?php echo $recset[0]['recipe_name'] ?>">
 </div>
 <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="personen" class="form-label">Hoeveel Personen</label>
+    <textarea class="amount" id="personen" value="<?php echo $recset[0]['numberPersons'] ?>" rows="3"></textarea>
     </div>
     </form>
     </div>
